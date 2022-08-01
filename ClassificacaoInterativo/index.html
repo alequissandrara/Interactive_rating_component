@@ -1,95 +1,156 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
 
-<head>
-  <meta charset="UTF-8">
+    <link
+      rel="icon"
+      type="imagens/png"
+      sizes="32x32"
+      href="imagens/favicon-32x32.png"
+    />
+    <link rel="stylesheet" type="text/css" href="css/estilo.css" />
+    <!-- -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <title>Interactive rating component</title>
+  </head>
 
-  <link rel="icon" type="imagens/png" sizes="32x32" href="imagens/favicon-32x32.png">
-  <link rel="stylesheet" type="text/css" href="css/estilo.css">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <title>Interactive rating component</title>
+  <!-- 1 -  O uso do css inline é uma técnica válida em alguns cenários.
+      Por exemplo pensando em setar um width e um height de uma img quando seu carregamento pode prejudicar
+      a experiência do usuário no carregamento da página.
 
- 
-
-</head>
-
-<body style="background-color:rgb(0, 0, 0)">
-
-  <div id="card" class="">
-    <div class="cartao">
-      <div class="container text-center">
-        <div class="row">
-          <div class="col-mg">
-            <!--Icone da trela dentro do card-->
-            <div class="CirculoIcone">
-              <i class="estrela fa fa-star" style="font-size:30px; margin: -2px -7px; color:#E68226;"></i>
-            </div>
-            <!--Textos do card-->
-              </div>
-                <div class="col-mg">
-                  <h1>How did we do?</h1>
-                </div>
-              <div class="col-mg ">
-                <h6>Please let us know how we did with your support request. All feedback is appreciated
-                  to help us improve our offering!</h6>
-              </div>
-                <!--Botões númericos-->
-                <form class="form" >
-                  <input type="radio" value="1" class="button" name="button" id="1" /> 
-                  <label for="1">1</label>
-                  <input type="radio" value="2" class="button" name="button" id="2" /> 
-                  <label for="2">2</label>
-                  <input type="radio" value="3" class="button" name="button" id="3" /> 
-                  <label for="3">3</label>
-                  <input type="radio" value="4" class="button" name="button" id="4" /> 
-                  <label for="4">4</label>
-                  <input type="radio" value="5" class="button" name="button" id="5" /> 
-                  <label for="5">5</label>
-  
-              <!--Botão de envio-->
-                <button type="submit" class="botao">SUBMIT</button>
-
-                </form>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div id="card-2" class="hide">
-    <div class="cartao">
-      <div class="container text-center">
-        <div class="row">
-          <div class="col-mg card2">
-            <!--Icone da trela dentro do card-->
-              <div >
-                <img src="imagens/illustration-thank-you.svg" >
-              </div>
-            </div>
-              <!--Botão de envio-->
-              <div class="col-mg card2">
-               
-                <div  id="resultado" >
-                  <div class="resposta">You selected <span id="span">0</span> out of 5</div>
-                </div>
-                
+      2 - No caso de backgrounds é preferível o uso do css external, assim você consegue organizar melhor seu código.
+  -->
+  <body style="background-color: rgb(0, 0, 0)">
+    <!-- 1 - Dentro de todo body é esperado um elemento do tipo 'main'.
+      2 - Pra manter a consistência e também a organização do seu código, é bom sempre utilizar inglês OU português.
+      Os dois podem causar um pouco de confusão.
+    -->
+    <div id="card" class="">
+      <div class="cartao">
+        <div class="container text-center">
+          <div class="row">
+            <div class="col-mg">
+              <!--Icone da trela dentro do card-->
+              <div class="CirculoIcone">
+                <i
+                  class="estrela fa fa-star"
+                  style="font-size: 30px; margin: -2px -7px; color: #e68226"
+                ></i>
               </div>
               <!--Textos do card-->
-              
-                <div class="col-mg card2">
-                  <h1 class="texto1">Thank you!</h1>
-                </div>
-              <div class="col-mg card2 " >
-                <h6 class="texto2">We appreciate you taking the time to give a rating. If you ever need more support, 
-                  don't hesitate to get in touch!</h6>
-              </div>
+            </div>
+            <div class="col-mg">
+              <h1>How did we do?</h1>
+            </div>
+            <div class="col-mg">
+              <!-- acho que a description caberia melhor uma tag paragraph do que o h6 -->
+              <h6>
+                Please let us know how we did with your support request. All
+                feedback is appreciated to help us improve our offering!
+              </h6>
+            </div>
+            <!--Botões númericos-->
+            <form class="form">
+              <input
+                type="radio"
+                value="1"
+                class="button"
+                name="button"
+                id="1"
+              />
+              <label for="1">1</label>
+              <input
+                type="radio"
+                value="2"
+                class="button"
+                name="button"
+                id="2"
+              />
+              <label for="2">2</label>
+              <input
+                type="radio"
+                value="3"
+                class="button"
+                name="button"
+                id="3"
+              />
+              <label for="3">3</label>
+              <input
+                type="radio"
+                value="4"
+                class="button"
+                name="button"
+                id="4"
+              />
+              <label for="4">4</label>
+              <input
+                type="radio"
+                value="5"
+                class="button"
+                name="button"
+                id="5"
+              />
+              <label for="5">5</label>
+
+              <!--Botão de envio-->
+              <button type="submit" class="botao">SUBMIT</button>
+            </form>
+          </div>
         </div>
       </div>
     </div>
-  </div>
 
-  <script src="meuScript.js" ></script> 
-</body>
+    <div id="card-2" class="hide">
+      <div class="cartao">
+        <!-- 
+          O uso de frameworks UI são válidos e até a melhor opção em determinados casos em que 
+          você não tem um estilo tão específico e necessita de uma solução mais rápida.
 
+          Caso contrário eu acredito que eles mais atrapalham que ajudam. Todos eles tem uma interface de 
+          customização, mas que podem complicar bastante a nossa vida.
+        -->
+        <div class="container text-center">
+          <div class="row">
+            <div class="col-mg card2">
+              <!--Icone da trela dentro do card-->
+              <div>
+                <img src="imagens/illustration-thank-you.svg" />
+              </div>
+            </div>
+            <!--Botão de envio-->
+            <div class="col-mg card2">
+              <div id="resultado">
+                <div class="resposta">
+                  You selected <span id="span">0</span> out of 5
+                </div>
+              </div>
+            </div>
+            <!--Textos do card-->
+
+            <div class="col-mg card2">
+              <h1 class="texto1">Thank you!</h1>
+            </div>
+            <div class="col-mg card2">
+              <h6 class="texto2">
+                We appreciate you taking the time to give a rating. If you ever
+                need more support, don't hesitate to get in touch!
+              </h6>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="meuScript.js"></script>
+  </body>
 </html>
